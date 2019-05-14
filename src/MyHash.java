@@ -8,25 +8,28 @@ class MyHash {
         words = new StringNode[m];
     }
 
-    public long getHash(String word) {
+    public int getHash(String word) {
         long result = 0;
         for (int i = 0; i < word.length(); i++) {
             result += (word.charAt(i) * Math.pow(x, i)) % p;
         }
-        return result % m;
+        return (int)(result % m);
     }
 
-    public void add(StringNode word) {
-        words[number] = name;
+    public void add(String word) {
+        int hash = getHash(word);
+        if ()
     }
 
-    public void del(int number) {
-        if (words[number] == null) return;
-        words[number] = null;
+    public void del(String word) {
+        int hash = getHash(word);
+        if (words[hash] == null) return;
+        words[hash] = null;
     }
 
-    public String find(int number) {
-        if (words[number] == null) return "not found";
+    public String find(String word) {
+        int hash = getHash(word);
+        if (words[hash] == null) return "no";
         return words[number];
     }
 }
