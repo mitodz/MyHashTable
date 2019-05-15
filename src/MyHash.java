@@ -38,6 +38,7 @@ class MyHash {
             return "yes";
         } else if (!words.isLast()){
             find(word, words.getNext());
-        } else return "no";
+        }
+        return "no";
     }
 }
