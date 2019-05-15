@@ -3,20 +3,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner("3\n" +
-                "12\n" +
-                "check 0\n" +
-                "find help\n" +
-                "add help\n" +
-                "add del\n" +
-                "add add\n" +
-                "find add\n" +
-                "find del\n" +
-                "del del\n" +
-                "find del\n" +
-                "check 0\n" +
-                "check 1\n" +
-                "check 2");
+        Scanner sc = new Scanner(System.in);
         int m = sc.nextInt(); //размер таблицы
         int n = sc.nextInt(); //количество запросов
         MyHash book = new MyHash(m);
@@ -35,6 +22,7 @@ public class Main {
                 case "check":
                     StringNode temp = book.check(sc.nextInt());
                     book.printStringNode(temp);
+                    System.out.println();
             }
         }
     }
