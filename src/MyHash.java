@@ -6,14 +6,15 @@ class MyHash {
 
     public MyHash(int m) {
         words = new StringNode[m];
+        this.m = m;
     }
 
     public int getHash(String word) {
         long result = 0;
         for (int i = 0; i < word.length(); i++) {
-            result += (word.charAt(i) * Math.pow(x, i)) % p;
+            result = (result + word.charAt(i) * ((long)Math.pow(x, i) % p) ) % p;
         }
-        return (int)(result % m);
+        return (int)(result) % m;
     }
 
     public void add(String word) {
@@ -55,13 +56,13 @@ class MyHash {
     }
 
     public StringNode check (int i) {
-        if (words[i].isEmpty()) {
+        if (words[i]==null) {
             return new StringNode();
         } else return words[i];
     }
 
     public void printStringNode (StringNode words) {
-        if (words.isEmpty()) {
+        if (words==null) {
             System.out.println();
         } else {
             System.out.println(words.getWord());
