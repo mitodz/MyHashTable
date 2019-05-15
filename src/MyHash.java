@@ -24,7 +24,15 @@ class MyHash {
     public void del(String word) {
         int hash = getHash(word);
         if (words[hash] == null) return;
-        words[hash] = null;
+        del(word, words[hash]);
+    }
+
+    public void del(String word, StringNode words) {
+        if (words.getWord().equals(word)){
+            words = null;
+        } else if (!words.isLast()){
+            find(word, words.getNext());
+        }
     }
 
     public String find(String word) {
