@@ -29,20 +29,18 @@ class MyHash {
     public void del(String word) {
         int hash = getHash(word);
         if (words[hash] == null) return;
-        del(word, words[hash]);
+        del(word, words[hash], hash);
     }
 
-    public void del(String word, StringNode words) {
+    public void del(String word, StringNode words, int hash) {
         if (words.isLast()) {
             if (words.getWord().equals(word)) {
-                words = null;
-                return;
+                this.words[hash] = null;
             }
         } else if (words.getNext().getWord().equals(word)){
             words.setNext(null);
-            return;
         } else {
-            del(word, words.getNext());
+            del(word, words.getNext(), hash);
         }
     }
 
@@ -68,11 +66,13 @@ class MyHash {
     }
 
     public void printStringNode (StringNode words) {
-        if (words==null) {
+        if (words.isEmpty()) {
             System.out.println();
         } else {
             System.out.print(words.getWord() + " ");
-            printStringNode(words.getNext());
+            if (!words.isLast()) {
+                printStringNode(words.getNext());
+            }
         }
     }
 }
