@@ -21,7 +21,7 @@ class MyHash {
         if (words[hash]==null) {
             words[hash] = new StringNode(word);
         } else if (find(word, words[hash]).equals("no")){
-
+            words[hash] = new StringNode(word, words[hash]);
         }
     }
 
@@ -52,5 +52,13 @@ class MyHash {
             find(word, words.getNext());
         }
         return "no";
+    }
+
+    public StringNode check (int i) {
+        if (words[i].isEmpty()) return new StringNode();
+        if (!words[i].isLast()){
+            System.out.println(words[i].getWord());
+            check(this.);
+        } else return;
     }
 }
