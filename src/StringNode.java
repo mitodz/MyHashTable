@@ -1,5 +1,6 @@
 class StringNode {
     private String word;
+    private boolean isLast = true;
     private StringNode next;
 
     public StringNode(String word) {
@@ -9,10 +10,15 @@ class StringNode {
     public StringNode(String word, StringNode next) {
         this.word = word;
         this.next = next;
+        isLast = false;
     }
 
     public String getWord() {
         return word;
+    }
+
+    public boolean isLast() {
+        return isLast;
     }
 
     public void setWord(String word) {
@@ -21,5 +27,9 @@ class StringNode {
 
     public void setNext(StringNode next) {
         this.next = next;
+    }
+
+    public StringNode getNext() {
+        return next;
     }
 }

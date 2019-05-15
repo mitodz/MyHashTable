@@ -30,6 +30,14 @@ class MyHash {
     public String find(String word) {
         int hash = getHash(word);
         if (words[hash] == null) return "no";
-        return words[number];
+        return find(word, words[hash]);
+    }
+
+    public String find (String word, StringNode words) {
+        if (words.getWord().equals(word)){
+            return "yes";
+        } else if (!words.isLast()){
+            find(word, words.getNext());
+        } else return "no";
     }
 }
