@@ -27,6 +27,7 @@ class StringNode {
 
     public void setNext(StringNode next) {
         this.next = next;
+        isLast = false;
     }
 
     public StringNode getNext() {
