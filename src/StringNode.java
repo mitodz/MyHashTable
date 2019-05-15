@@ -31,10 +31,6 @@ class StringNode {
         return isEmpty;
     }
 
-    public void setWord(String word) {
-        this.word = word;
-    }
-
     public void setNext(StringNode next) {
         this.next = next;
         if (next == null) isLast = true;

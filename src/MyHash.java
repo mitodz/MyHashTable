@@ -3,6 +3,7 @@ class MyHash {
     private int x = 263;
     private int m; //размер массива
     private StringNode[] words;
+    private static StringBuilder sb = new StringBuilder();
 
     public MyHash(int m) {
         words = new StringNode[m];
@@ -73,12 +74,17 @@ class MyHash {
         } else return words[i];
     }
 
-    public void printStringNode(StringNode words) {
+    public void flush () {
+        sb.setLength(0);
+    }
+
+    public String printStringNode(StringNode words) {
         if (!words.isEmpty()) {
-            System.out.print(words.getWord() + " ");
+            sb.append(words.getWord() + " ");
             if (!words.isLast()) {
                 printStringNode(words.getNext());
             }
         }
+        return sb.toString();
     }
 }
