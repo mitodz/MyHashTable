@@ -50,7 +50,7 @@ class MyHash {
         if (words.getWord().equals(word)){
             return "yes";
         } else if (!words.isLast()){
-            find(word, words.getNext());
+            return find(word, words.getNext());
         }
         return "no";
     }
