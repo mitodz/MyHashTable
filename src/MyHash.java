@@ -9,10 +9,18 @@ class MyHash {
         this.m = m;
     }
 
+    private long pow (int x, int i, int p) {
+        long result = 1;
+        for (int j = 1; j <= i; j++) {
+            result=((result * x) % p + p) % p;
+        }
+        return result;
+    }
+
     public int getHash(String word) {
         long result = 0;
         for (int i = 0; i < word.length(); i++) {
-            result = (result + word.charAt(i) * ((long) Math.pow(x, i) % p)) % p;
+            result = ((result + word.charAt(i) * pow(x, i, p)) % p + p) % p;
         }
         return (int) (result) % m;
     }
