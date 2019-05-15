@@ -34,9 +34,9 @@ class MyHash {
 
     public void del(String word, StringNode words) {
         if (words.getWord().equals(word)){
-            words = null;
+            words.setNext(null);
         } else if (!words.isLast()){
-            find(word, words.getNext());
+            del(word, words.getNext());
         }
     }
 
