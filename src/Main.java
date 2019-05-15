@@ -1,22 +1,19 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner("5\n" +
-                "12\n" +
-                "add world\n" +
-                "add HellO\n" +
-                "check 4\n" +
-                "find World\n" +
-                "find world\n" +
-                "del world\n" +
-                "check 4\n" +
-                "del HellO\n" +
-                "add luck\n" +
-                "add GooD\n" +
-                "check 2\n" +
-                "del good");
+        Scanner sc = new Scanner("4\n" +
+                "8\n" +
+                "add test\n" +
+                "add test\n" +
+                "find test\n" +
+                "del test\n" +
+                "find test\n" +
+                "find Test\n" +
+                "add Test\n" +
+                "find Test");
         int m = sc.nextInt(); //размер таблицы
         int n = sc.nextInt(); //количество запросов
         MyHash book = new MyHash(m);
