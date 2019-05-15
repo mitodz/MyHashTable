@@ -22,13 +22,15 @@ public class Main {
                     book.del(sc.next());
                     break;
                 case "find":
-                    if (sb.length()!=0) sb.append("\n");
                     sb.append(book.find(sc.next()));
+                    if (i < n - 1) sb.append("\n");
                     break;
                 case "check":
                     StringNode temp = book.check(sc.nextInt());
-                    sb.append("\n").append(book.printStringNode(temp));
+                    sb.append(book.printStringNode(temp));
+                    if (i < n - 1) sb.append("\n");
                     book.flush();
+                    break;
             }
         }
         return sb.toString();
