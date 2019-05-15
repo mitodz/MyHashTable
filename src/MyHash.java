@@ -66,9 +66,7 @@ class MyHash {
     }
 
     public void printStringNode(StringNode words) {
-        if (words.isEmpty()) {
-            System.out.println();
-        } else {
+        if (!words.isEmpty()) {
             System.out.print(words.getWord() + " ");
             if (!words.isLast()) {
                 printStringNode(words.getNext());
