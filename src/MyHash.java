@@ -65,7 +65,7 @@ class MyHash {
         if (words==null) {
             System.out.println();
         } else {
-            System.out.println(words.getWord());
+            System.out.print(words.getWord() + " ");
             printStringNode(words.getNext());
         }
     }
