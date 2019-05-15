@@ -18,7 +18,11 @@ class MyHash {
 
     public void add(String word) {
         int hash = getHash(word);
-        if ()
+        if (words[hash]==null) {
+            words[hash] = new StringNode(word);
+        } else if (find(word, words[hash]).equals("no")){
+
+        }
     }
 
     public void del(String word) {
