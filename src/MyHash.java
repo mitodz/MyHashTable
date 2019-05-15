@@ -33,9 +33,15 @@ class MyHash {
     }
 
     public void del(String word, StringNode words) {
-        if (words.getWord().equals(word)){
-            words.setWord("");//костыль
-        } else if (!words.isLast()){
+        if (words.isLast()) {
+            if (words.getWord().equals(word)) {
+                words = null;
+                return;
+            }
+        } else if (words.getNext().getWord().equals(word)){
+            words.setNext(null);
+            return;
+        } else {
             del(word, words.getNext());
         }
     }

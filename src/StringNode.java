@@ -37,7 +37,7 @@ class StringNode {
 
     public void setNext(StringNode next) {
         this.next = next;
-        isLast = false;
+        if (next==null) isLast = true;
     }
 
     public StringNode getNext() {
