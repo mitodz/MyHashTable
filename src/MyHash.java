@@ -55,10 +55,17 @@ class MyHash {
     }
 
     public StringNode check (int i) {
-        if (words[i].isEmpty()) return new StringNode();
-        if (!words[i].isLast()){
-            System.out.println(words[i].getWord());
-            check(this.);
-        } else return;
+        if (words[i].isEmpty()) {
+            return new StringNode();
+        } else return words[i];
+    }
+
+    public void printStringNode (StringNode words) {
+        if (words.isEmpty()) {
+            System.out.println();
+        } else {
+            System.out.println(words.getWord());
+            printStringNode(words.getNext());
+        }
     }
 }
