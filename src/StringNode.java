@@ -4,7 +4,6 @@ class StringNode {
     private boolean isFirst = true;
 
 
-
     public StringNode() {
     }
 
@@ -26,11 +25,11 @@ class StringNode {
     }
 
     public boolean isLast() {
-        return next==null;
+        return next == null;
     }
 
     public boolean isEmpty() {
-        return word==null;
+        return word == null;
     }
 
     public void setNext(StringNode next) {

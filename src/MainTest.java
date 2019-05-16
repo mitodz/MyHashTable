@@ -28,7 +28,7 @@ class MainTest {
                 "yes\n" +
                 "HellO \n" +
                 "GooD luck \n";
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -48,7 +48,7 @@ class MainTest {
                 "no\n" +
                 "no\n" +
                 "yes\n";
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -75,7 +75,7 @@ class MainTest {
                 "no\n" +
                 "\n" +
                 "add help \n\n";
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -89,14 +89,14 @@ class MainTest {
                 "find test\n" +
                 "find Test\n" +
                 "add Test\n" +
-                "check 0\n"+
+                "check 0\n" +
                 "check 1");
         String actual = new Main().getResult(sc);
         String expected = "no\n" +
                 "no\n" +
                 "no\n" +
                 "Test \n\n";
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -107,7 +107,7 @@ class MainTest {
                 "find d");
         String actual = new Main().getResult(sc);
         String expected = "no\n";
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -117,7 +117,7 @@ class MainTest {
                 "check 1");
         String actual = new Main().getResult(sc);
         String expected = "\n";
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -129,7 +129,7 @@ class MainTest {
                 "check 1 ");
         String actual = new Main().getResult(sc);
         String expected = "\nno\n\n";
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -154,6 +154,6 @@ class MainTest {
                 "yes\n" +
                 "world \n" +
                 "GooD luck \n";
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 }

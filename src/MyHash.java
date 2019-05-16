@@ -8,10 +8,10 @@ class MyHash {
         this.m = m;
     }
 
-    public long pow (int x, int i, int p) {
+    public long pow(int x, int i, int p) {
         long result = 1;
         for (int j = 1; j <= i; j++) {
-            result=((result * x) % p + p) % p;
+            result = ((result * x) % p + p) % p;
         }
         return result;
     }
@@ -44,10 +44,10 @@ class MyHash {
 
     public void del(String word, StringNode words, int hash) {
         if (words.isLast() && words.isFirst() && words.getWord().equals(word)) {
-                this.words[hash] = null;
+            this.words[hash] = null;
         } else if (words.isFirst() && words.getWord().equals(word)) {
-                this.words[hash] = words.getNext();
-                this.words[hash].setFirstOrNot(true);
+            this.words[hash] = words.getNext();
+            this.words[hash].setFirstOrNot(true);
         } else if (words.getNext().getWord().equals(word) && words.getNext().isLast()) {
             words.setNext(null);
         } else if (words.getNext().getWord().equals(word)) {
@@ -78,7 +78,7 @@ class MyHash {
         } else return words[i];
     }
 
-    public void flush () {
+    public void flush() {
         sb.setLength(0);
     }
 
