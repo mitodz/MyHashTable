@@ -1,7 +1,5 @@
 class StringNode {
     private String word;
-    private boolean isLast = true;
-    private boolean isEmpty = true;
     private StringNode next;
 
     public StringNode() {
@@ -9,14 +7,11 @@ class StringNode {
 
     public StringNode(String word) {
         this.word = word;
-        isEmpty = false;
     }
 
     public StringNode(String word, StringNode next) {
         this.word = word;
         this.next = next;
-        isLast = false;
-        isEmpty = false;
     }
 
     public String getWord() {
@@ -24,16 +19,15 @@ class StringNode {
     }
 
     public boolean isLast() {
-        return isLast;
+        return next==null;
     }
 
     public boolean isEmpty() {
-        return isEmpty;
+        return word==null;
     }
 
     public void setNext(StringNode next) {
         this.next = next;
-        if (next == null) isLast = true;
     }
 
     public StringNode getNext() {
