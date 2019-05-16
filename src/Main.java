@@ -11,6 +11,7 @@ public class Main {
         int m = sc.nextInt(); //размер таблицы
         int n = sc.nextInt(); //количество запросов
         MyHash book = new MyHash(m);
+        int count = 0;
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < n; i++) {
             String buf = sc.next();
@@ -22,13 +23,15 @@ public class Main {
                     book.del(sc.next());
                     break;
                 case "find":
+                    if (count > 0) sb.append("\n");
+                    count++;
                     sb.append(book.find(sc.next()));
-                    if (i != n - 1) sb.append("\n");
                     break;
                 case "check":
+                    if (count > 0) sb.append("\n");
+                    count++;
                     StringNode temp = book.check(sc.nextInt());
                     sb.append(book.printStringNode(temp));
-                    if (i != n - 1) sb.append("\n");
                     book.flush();
                     break;
             }
