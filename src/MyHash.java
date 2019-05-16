@@ -10,7 +10,7 @@ class MyHash {
         this.m = m;
     }
 
-    private long pow (int x, int i, int p) {
+    public long pow (int x, int i, int p) {
         long result = 1;
         for (int j = 1; j <= i; j++) {
             result=((result * x) % p + p) % p;
