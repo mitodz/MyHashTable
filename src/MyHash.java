@@ -80,7 +80,7 @@ class MyHash {
 
     public String printStringNode(StringNode words) {
         if (!words.isEmpty()) {
-            sb.append(words.getWord() + " ");
+            sb.append(words.getWord()).append(" ");
             if (!words.isLast()) {
                 printStringNode(words.getNext());
             }
