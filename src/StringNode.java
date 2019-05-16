@@ -1,6 +1,7 @@
 class StringNode {
     private String word;
     private StringNode next;
+    private boolean isFirst;
 
     public StringNode() {
     }

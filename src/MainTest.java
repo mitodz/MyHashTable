@@ -119,4 +119,41 @@ class MainTest {
         String expected = "\n";
         assertEquals(expected,actual);
     }
+
+    @Test
+    void getResult7() {
+        Scanner sc = new Scanner("2\n" +
+                "3\n" +
+                "check 0 \n" +
+                "find va \n" +
+                "check 1 ");
+        String actual = new Main().getResult(sc);
+        String expected = "\nno\n\n";
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    void getResult8() {
+        Scanner sc = new Scanner("5\n" +
+                "12\n" +
+                "add world\n" +
+                "add HellO\n" +
+                "check 4\n" +
+                "find World\n" +
+                "find world\n" +
+                "del HellO\n" +
+                "check 4\n" +
+                "del world\n" +
+                "add luck\n" +
+                "add GooD\n" +
+                "check 2\n" +
+                "del good");
+        String actual = new Main().getResult(sc);
+        String expected = "HellO world \n" +
+                "no\n" +
+                "yes\n" +
+                "world \n" +
+                "GooD luck \n";
+        assertEquals(expected,actual);
+    }
 }
