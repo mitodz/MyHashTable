@@ -81,7 +81,7 @@ class MainTest {
     @Test
     void getResult4() {
         Scanner sc = new Scanner("4\n" +
-                "8\n" +
+                "9\n" +
                 "add test\n" +
                 "del test\n" +
                 "find test\n" +
@@ -98,5 +98,6 @@ class MainTest {
                 "Test \n";
         assertEquals(expected,actual);
     }
+
 
 }
