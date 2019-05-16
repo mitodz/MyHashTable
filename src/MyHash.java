@@ -18,9 +18,9 @@ class MyHash {
 
     public int getHash(String word) {
         long result = 0;
+        int x = 263;
+        int p = 1_000_000_007;
         for (int i = 0; i < word.length(); i++) {
-            int x = 263;
-            int p = 1_000_000_007;
             result = (result + ((word.charAt(i) * pow(x, i, p)) % p + p) % p + p) % p;
         }
         return (int) (result) % m;
@@ -31,7 +31,8 @@ class MyHash {
         if (words[hash] == null) {
             words[hash] = new StringNode(word);
         } else if (find(word, words[hash]).equals("no")) {
-            words[hash] = new StringNode(word, words[hash]);
+            words[hash].setFirstOrNot(false);//этот элемент станет вторым, поэтому должен сработать флажок
+            words[hash] = new StringNode(word, words[hash]);//создаем первый элемент
         }
     }
 
@@ -42,12 +43,15 @@ class MyHash {
     }
 
     public void del(String word, StringNode words, int hash) {
-        if (words.isLast()) {
-            if (words.getWord().equals(word)) {
+        if (words.isLast() && words.isFirst() && words.getWord().equals(word)) {
                 this.words[hash] = null;
-            }
-        } else if (words.getNext().getWord().equals(word)) {
+        } else if (words.isFirst() && words.getWord().equals(word)) {
+                this.words[hash] = words.getNext();
+                this.words[hash].setFirstOrNot(true);
+        } else if (words.getNext().getWord().equals(word) && words.getNext().isLast()) {
             words.setNext(null);
+        } else if (words.getNext().getWord().equals(word)) {
+            words.setNext(words.getNext().getNext());
         } else {
             del(word, words.getNext(), hash);
         }

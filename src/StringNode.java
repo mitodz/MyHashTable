@@ -1,6 +1,9 @@
 class StringNode {
     private String word;
     private StringNode next;
+    private boolean isFirst = true;
+
+
 
     public StringNode() {
     }
@@ -12,6 +15,10 @@ class StringNode {
     public StringNode(String word, StringNode next) {
         this.word = word;
         this.next = next;
+    }
+
+    public boolean isFirst() {
+        return isFirst;
     }
 
     public String getWord() {
@@ -32,5 +39,9 @@ class StringNode {
 
     public StringNode getNext() {
         return next;
+    }
+
+    public void setFirstOrNot(boolean first) {
+        isFirst = first;
     }
 }
