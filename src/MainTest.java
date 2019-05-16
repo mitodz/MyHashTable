@@ -78,4 +78,25 @@ class MainTest {
         assertEquals(expected,actual);
     }
 
+    @Test
+    void getResult4() {
+        Scanner sc = new Scanner("4\n" +
+                "8\n" +
+                "add test\n" +
+                "del test\n" +
+                "find test\n" +
+                "del test\n" +
+                "find test\n" +
+                "find Test\n" +
+                "add Test\n" +
+                "check 0\n"+
+                "check 1");
+        String actual = new Main().getResult(sc);
+        String expected = "no\n" +
+                "no\n" +
+                "no\n" +
+                "Test \n";
+        assertEquals(expected,actual);
+    }
+
 }
