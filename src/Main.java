@@ -23,18 +23,19 @@ public class Main {
                     book.del(sc.next());
                     break;
                 case "find":
-                    if (count > 0) sb.append("\n");
-                    count++;
-                    sb.append(book.find(sc.next()));
+//                    if (count > 0) sb.append("\n");
+//                    count++;
+                    sb.append(book.find(sc.next())).append("\n");
                     break;
                 case "check":
                     StringNode temp = book.check(sc.nextInt());
-                    if (count > 0 || (count==0 && temp.isEmpty())) {
-                        sb.append("\n");
-                    }
-                    sb.append(book.printStringNode(temp));
+//                    if (count > 0 || (count==0 && temp.isEmpty())) {
+//                        sb.append("\n");
+//                    }
+//                    count++;
+                    sb.append(book.printStringNode(temp)).append("\n");
                     book.flush();
-                    count++;
+
                     break;
             }
         }

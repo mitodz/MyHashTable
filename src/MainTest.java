@@ -27,7 +27,7 @@ class MainTest {
                 "no\n" +
                 "yes\n" +
                 "HellO \n" +
-                "GooD luck ";
+                "GooD luck \n";
         assertEquals(expected,actual);
     }
 
@@ -47,7 +47,7 @@ class MainTest {
         String expected = "yes\n" +
                 "no\n" +
                 "no\n" +
-                "yes";
+                "yes\n";
         assertEquals(expected,actual);
     }
 
@@ -74,7 +74,7 @@ class MainTest {
                 "yes\n" +
                 "no\n" +
                 "\n" +
-                "add help \n";
+                "add help \n\n";
         assertEquals(expected,actual);
     }
 
@@ -95,7 +95,7 @@ class MainTest {
         String expected = "no\n" +
                 "no\n" +
                 "no\n" +
-                "Test \n";
+                "Test \n\n";
         assertEquals(expected,actual);
     }
 
@@ -106,7 +106,7 @@ class MainTest {
                 "add a\n" +
                 "find d");
         String actual = new Main().getResult(sc);
-        String expected = "no";
+        String expected = "no\n";
         assertEquals(expected,actual);
     }
 
