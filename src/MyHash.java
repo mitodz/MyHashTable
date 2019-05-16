@@ -21,7 +21,7 @@ class MyHash {
     public int getHash(String word) {
         long result = 0;
         for (int i = 0; i < word.length(); i++) {
-            result = ((result + word.charAt(i) * pow(x, i, p)) % p + p) % p;
+            result = (result + ((word.charAt(i) * pow(x, i, p)) % p + p) % p + p) % p;
         }
         return (int) (result) % m;
     }
