@@ -28,11 +28,13 @@ public class Main {
                     sb.append(book.find(sc.next()));
                     break;
                 case "check":
-                    if (count > 0) sb.append("\n");
-                    count++;
                     StringNode temp = book.check(sc.nextInt());
+                    if (count > 0 || (count==0 && temp.isEmpty())) {
+                        sb.append("\n");
+                    }
                     sb.append(book.printStringNode(temp));
                     book.flush();
+                    count++;
                     break;
             }
         }

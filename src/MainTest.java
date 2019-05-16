@@ -110,5 +110,13 @@ class MainTest {
         assertEquals(expected,actual);
     }
 
-
+    @Test
+    void getResult6() {
+        Scanner sc = new Scanner("3\n" +
+                "1\n" +
+                "check 1");
+        String actual = new Main().getResult(sc);
+        String expected = "\n";
+        assertEquals(expected,actual);
+    }
 }
