@@ -36,6 +36,10 @@ class StringNode {
         this.next = next;
     }
 
+    public void setLast() {
+        this.next = null;
+    }
+
     public StringNode getNext() {
         return next;
     }

@@ -43,13 +43,16 @@ class MyHash {
     }
 
     public void del(String word, StringNode words, int hash) {
-        if (words.isLast() && words.isFirst() && words.getWord().equals(word)) {
-            this.words[hash] = null;
+        if (words.isLast() && words.isFirst()) {
+            if (words.getWord().equals(word)) {
+                this.words[hash] = null;
+            }
+            return;
         } else if (words.isFirst() && words.getWord().equals(word)) {
             this.words[hash] = words.getNext();
             this.words[hash].setFirstOrNot(true);
         } else if (words.getNext().getWord().equals(word) && words.getNext().isLast()) {
-            words.setNext(null);
+            words.setLast();
         } else if (words.getNext().getWord().equals(word)) {
             words.setNext(words.getNext().getNext());
         } else {

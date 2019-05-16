@@ -156,4 +156,37 @@ class MainTest {
                 "GooD luck \n";
         assertEquals(expected, actual);
     }
+
+    @Test
+    void getResult9() {
+        Scanner sc = new Scanner("3\n" +
+                "3\n" +
+                "add HellO\n" +
+                "del world\n" +
+                "check 0\n");
+        String actual = new Main().getResult(sc);
+        String expected = "HellO \n" ;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void getResult10() {
+        Scanner sc = new Scanner("5\n" +
+                "6\n" +
+                "add HellO\n" +
+                "add world\n" +
+                "check 4\n" +
+                "del world\n" +
+                "check 4\n" +
+                "del HellO\n" +
+                "check 4\n");
+        String actual = new Main().getResult(sc);
+        String expected = "HellO world \n" +
+                "no\n" +
+                "yes\n" +
+                "HellO \n" +
+                "GooD luck \n";
+        assertEquals(expected, actual);
+    }
+
 }
