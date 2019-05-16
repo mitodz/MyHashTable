@@ -1,6 +1,4 @@
 class MyHash {
-    private int p = 1_000_000_007;
-    private int x = 263;
     private int m; //размер массива
     private StringNode[] words;
     private static StringBuilder sb = new StringBuilder();
@@ -21,6 +19,8 @@ class MyHash {
     public int getHash(String word) {
         long result = 0;
         for (int i = 0; i < word.length(); i++) {
+            int x = 263;
+            int p = 1_000_000_007;
             result = (result + ((word.charAt(i) * pow(x, i, p)) % p + p) % p + p) % p;
         }
         return (int) (result) % m;
